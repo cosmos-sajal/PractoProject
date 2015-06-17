@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Practo Doctor Info</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <style>
+   #name, #email, #speciality {
+  	border:1px solid #d1c7ac;
+	width: 100%;
+	color:#333333;
+	padding:3px;
+	margin-right:4px;
+	margin-bottom:8px;
+	font-family:tahoma, arial, sans-serif;
+   }
+   #clinic_name, #contact_num, #first_addr, #locality, #city, #pincode, #country, #fees
+   , #start_day_booking, #end_day_booking, #college_name, #clinic_exp, #start_date_edu, 
+   #end_date_edu, #start_date_exp, #end_date_exp {
+   	border:1px solid #d1c7ac;
+	width: 100%;
+	color:#333333;
+	padding:3px;
+	margin-right:4px;
+	margin-bottom:8px;
+	font-family:tahoma, arial, sans-serif;
+   }
+   #info {
+   	width: 100%;
+   }
+
+   .upper-panels {
+       height: 300px; / change according to your requirement/
+   }
+   .lower-panels {
+   		height: 130px;
+   }
+   body {
+   	background-image: url('http://bgfons.com/upload/light_texture2245.jpg');
+   }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="page-header">
+   <nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Practo 0.0.1</a>
+	    </div>
+	    <div>
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="http://www.practo.com">Practo Home</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="https://play.google.com/store/apps/developer?id=Practo&hl=en"><span class="glyphicon glyphicon-download"></span> Download App</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+  </div>
+   
+  <div class="panel panel-info">
+      <div class="panel-heading">Enter Information</div>
+      <div class="panel-body">
+      	<form method="POST" action="/put_in_db" role="form">
+	    	
+	    	<div class="row">
+	    	 <div class="col-sm-6">
+	    	  <div class="panel panel-primary">
+               <div class="panel-heading">Personal Information</div>
+               <div class="panel-body upper-panels">
+	    	    <div><div class="label label-primary">Name</div>{{ form.name() }}</div>
+		        <div><div class="label label-primary">Email ID</div>{{ form.email() }}</div>
+		        <div><div class="label label-primary">Enter About Yourself</div>{{ form.info() }}</div>
+		        <div><div class="label label-primary">Speciality</div>{{ form.speciality() }}</div>
+		       </div>
+		      </div>
+		     </div>
+
+		     <div class="col-sm-6">
+		      <div class="panel panel-primary">
+		       <div class="panel-heading">Clinic Details</div>
+		        <div class="panel-body upper-panels">
+		         
+		         <div class="row">
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">Clinic Name</div>{{ form.clinic_name() }}</div>
+		          </div>
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">Contact Number</div>{{ form.contact_num() }}</div>
+		          </div>
+		         </div>
+		         
+		         <div class="row">
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">Street Address</div>{{ form.first_addr() }}</div>
+		          </div>
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">Locality</div>{{ form.locality() }}</div>
+		          </div>
+		         </div>
+
+		         <div class="row">
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">City</div>{{ form.city() }}</div>
+		          </div>
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">Pincode</div>{{ form.pincode() }}</div>
+		          </div>
+		          </div>
+		         
+
+		         <div class="row">
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">Country</div>{{ form.country() }}</div>
+		          </div>
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">Fees</div>{{ form.fees() }}</div>
+		          </div>
+		         </div>
+
+		         <div class="row">
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">Start Day</div>{{ form.start_day_booking() }}</div>
+		          </div>
+		          <div class="col-sm-6">
+		           <div><div class="label label-primary">End Day</div>{{ form.end_day_booking() }}</div>
+		          </div>
+		         </div>
+		        </div>
+		      </div>
+		     </div>
+		    </div>
+
+		    <div class="row">
+		     <div class="col-sm-6">
+		      <div class="panel panel-primary">
+               <div class="panel-heading">Educational Qualification</div>
+               <div class="panel-body lower-panels">
+		        <div><div class="label label-primary">College</div>{{ form.college_name() }}</div>
+		        <div class="row">
+		         <div class="col-sm-6">
+		          <div><div class="label label-primary">Start Date</div>{{ form.start_date_edu() }}</div>
+		         </div>
+		         <div class="col-sm-6"> 
+		          <div><div class="label label-primary">End Date</div>{{ form.end_date_edu() }}</div>
+		         </div>
+		        </div>
+		       </div>
+			  </div>
+		     </div>
+		    
+		     <div class="col-sm-6">
+			  <div class="panel panel-primary">
+               <div class="panel-heading">Experience</div>
+               <div class="panel-body lower-panels">
+		        <div><div class="label label-primary">Clinic/Hostpital worked at</div>{{ form.clinic_exp() }}</div>
+		        <div class="row">
+		         <div class="col-sm-6">
+		          <div><div class="label label-primary">Start Date</div>{{ form.start_date_exp() }}</div>
+		         </div>
+		         <div class="col-sm-6">
+		          <div><div class="label label-primary">End Date</div>{{ form.end_date_exp() }}</div>
+		         </div>
+		        </div>
+		       </div>
+		      </div>
+		     </div>
+
+		    </div>
+		    
+		    <div align="center">
+		  	 <button type="submit" class="btn btn-primary">Submit</button>
+		  	</div>
+  		</form>
+      </div>
+   </div>
+</div>
+
+</body>
+</html>

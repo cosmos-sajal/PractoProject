@@ -1,0 +1,28 @@
+Batch Number : 6 (p1 - 11, p1 - 12)
+Sajal Sharma
+Neel Bakshi
+
+For Backend
+-----------
+
+1. Run python app.py
+2. Open localhost:5000/doctor to add to database
+3. While adding add date in the format "yyyy-mm-dd"
+4. No validation is done, so the add should be careful.
+5. After adding just hit submit, localhost:5000/put_in_db will be called and it will show "Done!!"
+6. The data has been added to the database.
+
+For Search
+----------
+
+1) install bower by typing npm install bower
+2) create database with database name 'search'
+3) Grant privileges
+2) run app.py in the Practo-Search directory
+3) access the search website using localhost:5000/search
+4) Enter search queries 
+
+PS :
+
+1. The two databases doesn't work together because of database schema difference which couldn't be 
+resolved due to time constraint. So, you have to create two different databases.
